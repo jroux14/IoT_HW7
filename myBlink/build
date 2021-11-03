@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Exploring BeagleBone - Building the myBlink application"
+g++ -o myBlink derek_LED.cpp myBlink.cpp
+echo "Finished"
