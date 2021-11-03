@@ -2,7 +2,6 @@
 #include<fstream>
 #include<string>
 #include<sstream>
-#include<unistd.h>
 #include"derek_LED.h"
 using namespace std;
 
@@ -35,22 +34,6 @@ void LED::turnOff(){
    cout << "Turning LED" << number << " off." << endl;
    removeTrigger();
    writeLED("/brightness", "0");
-}
-
-void LED::blink(int ledNum, int num){
-   if(num == 0){
-      cout << "Please enter a LED number and the number of blinks" << endl;
-   }else{
-      cout << "Blinking LED " << ledNum << ", " << num << "times." << endl;
-      for(int i = 0; i < num; i++){
-         writeLED("/brightness", "1");
-	 sleep(1);
-	 writeLED("/brightness", "0");
-	 sleep(1);
-      }
-
-      cout << "Finished blinking LED " << ledNum << endl;
-   }
 }
 
 void LED::flash(string delayms = "50"){

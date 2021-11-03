@@ -12,6 +12,5 @@ class LED{
       		virtual void turnOff();
       		virtual void flash(std::string delayms);
       		virtual void outputState();
-		virtual void blink(int ledNum, int num);
      		virtual ~LED();
 };

@@ -7,20 +7,14 @@
 using namespace std;
 
 int main(int argc, char* argv[]){
-   if(argc!=2 && argc!=4){
-	cout << "Usage is myApp <command> OR myApp <command> <ledNum> <number of blinks>" << endl;
-        cout << "   command is one of: on, off, flash, blink or status" << endl;
+   if(argc!=2){
+	cout << "Usage is myApp <command>" << endl;
+        cout << "   command is one of: on, off, flash or status" << endl;
 	cout << " e.g. makeLEDs flash" << endl;
    }
 
    LED leds[4] = { LED(0), LED(1), LED(2), LED(3) };
    string cmd(argv[1]);
-
-   if(argc == 4){
-      int ledNum = stoi(argv[2]);
-      int num = stoi(argv[3]);
-      leds[ledNum].blink(ledNum, num);
-   }
 
    for(int i=0; i<=3; i++){
       if(cmd=="on"){
