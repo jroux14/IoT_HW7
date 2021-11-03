@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Exploring BeagleBone - Building the myApp application"
+g++ -o myApp derek_LED.cpp myApp.cpp
+echo "Finished"
